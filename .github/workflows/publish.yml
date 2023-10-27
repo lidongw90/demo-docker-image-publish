@@ -1,0 +1,26 @@
+name: publish
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  publish-docker-example-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.TEST_DOCKER_REACT_TOKEN}}
+
+      - name: Build the example-docker-gitaction Docker image
+        run: |
+          docker build . --tag ghcr.io/linvest21-com/test-docker-react/docker-gitaction-example:latest
+          docker run ghcr.io/linvest21-com/test-docker-react/docker-gitaction-example:latest
+          docker push ghcr.io/linvest21-com/test-docker-react/docker-gitaction-example:latest
