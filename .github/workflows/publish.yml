@@ -17,7 +17,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.TEST_DOCKER_REACT_TOKEN}}
+          password: ${{ secrets.DEMO_DOCKER_TOKEN}}
 
       - name: Build the example-docker-gitaction Docker image
         run: |
