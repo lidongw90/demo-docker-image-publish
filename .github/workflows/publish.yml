@@ -21,6 +21,6 @@ jobs:
 
       - name: Build the example-docker-gitaction Docker image
         run: |
-          docker build . --tag ghcr.io/linvest21-com/test-docker-react/docker-gitaction-example:latest
-          docker run ghcr.io/linvest21-com/test-docker-react/docker-gitaction-example:latest
-          docker push ghcr.io/linvest21-com/test-docker-react/docker-gitaction-example:latest
+          docker build . --tag ghcr.io/lidongw90/demo-docker-image-publish/demo-docker-image-publish:latest
+          docker run ghcr.io/lidongw90/demo-docker-image-publish/demo-docker-image-publish:latest
+          docker push ghcr.io/lidongw90/demo-docker-image-publish/demo-docker-image-publish:latest
